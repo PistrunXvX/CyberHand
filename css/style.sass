@@ -1,0 +1,855 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap')
+
+// main setting styles
+$family-font: 'Russo One', sans-serif
+$font-size-p-small: 8px
+$font-size-h-small: 15px
+$font-size-p-middle: 18px
+$font-size-h-middle: 24px
+
+$color-black: #030200
+$color-white: #FFFFFF
+$color-yellow: #F2AE00
+$color-purple: #700151
+$color-blue: #001870
+
+
+//extened
+
+%nav-styling
+	display: inline
+	text-decoration: none
+	color: $color-white
+
+%a-reset
+	text-decoration: none
+
+//mixin
+
+@mixin button-reset 
+	padding: 0
+	border: none
+	font: inherit
+	color: inherit
+	background-color: transparent
+	cursor: pointer
+
+//animation
+
+.animateBlock 
+	width: 100% !important
+
+.animateBlockH2
+	padding-left: 75% !important
+
+.animationShowText
+	opacity: 1 !important
+	visibility: visible !important
+	margin-top: 2% !important
+
+.animationShowTextLeft
+	opacity: 1 !important
+	visibility: visible !important
+	margin-top: 1% !important
+
+.animateShowInsideText
+	font-size: 24px !important
+
+.animateBlockH2Left
+	padding-left: 15% !important
+
+.move-storm 
+	background-position: 50% 50%, 10% 50%, 90% 50% !important
+
+::-webkit-scrollbar-button:horizontal
+	color: $color-purple
+
+::-webkit-scrollbar-thumb:horizontal
+	background-color: $color-purple
+//slider style
+.slider 
+  position: relative
+  overflow: hidden
+
+  margin-top: 3%
+
+.slider__wrapper 
+  display: flex
+  transition: transform 0.6s ease 
+
+.slider__item 
+  flex: 0 0 100%
+  max-width: 100%
+
+.description-slide
+	font-size: 25px
+	font-family: $family-font
+	color: $color-black
+	text-align: center
+
+	margin-top: 5%
+
+	border-top: 5px solid black
+	border-bottom: 5px solid black
+
+.img-slide
+	margin-left: 30%
+	width: 30%
+
+.price-slide
+	font-size: 30px
+	font-family: $family-font
+	color: $color-black
+
+	margin-left: 5%
+	margin-bottom: 3%
+
+.link-slide-wrapper
+	text-align: center
+
+
+.link-slide
+	color: $color-white
+	font-size: 20px
+	font-family: $family-font
+	text-decoration: none
+
+	padding: 2%
+	background-color: $color-purple
+	border-radius: 15px
+
+.link-slide:hover
+	background-color: $color-black
+	text-decoration: none
+	color: $color-white
+
+.link-slide:focus
+	background-color: $color-black
+	text-decoration: none
+	color: $color-white
+
+.link-slide:active
+	background-color: $color-black
+	text-decoration: none
+	color: $color-black
+
+/* СТИЛИ ДЛЯ КНОПОК "НАЗАД" И "ВПЕРЁД" */
+.slider__control 
+  position: absolute
+  display: flex
+  top: 50%
+  transform: translateY(-50%)
+  align-items: center
+  justify-content: center
+  text-align: center
+  width: 100px //* ширина кнопки */
+  height: 100px //* высота кнопки */ 
+  opacity: 1 //* прозрачность */
+
+.slider__control_show 
+  display: flex
+
+.slider__control:hover, .slider__control:focus 
+  text-decoration: none
+  outline: 0
+  opacity: .9 //* прозрачность */
+
+.slider__control_left 
+  left: 0
+
+.slider__control_right 
+  right: 0
+
+.slider__control::before 
+  content: ''
+  display: inline-block
+  width: 80px ///* ширина иконки (стрелочки) */
+  height: 80px ///* высота иконки (стрелочки) */
+  background: transparent no-repeat center center
+  background-size: 100% 100%
+
+.slider__control_left::before 
+  background-image: url("../img/sliderButtonLeft.svg")
+
+.slider__control_right::before 
+  background-image: url("../img/sliderButtonRight.svg")
+
+//style mobile-menu
+
+.mobile-menu-header
+	background-color: $color-black
+	background-image: url("../img/Logo.svg")
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	// background-size: px
+
+	padding-top: 50px
+
+.logo-mobile
+
+//style global
+
+.text-color-yel
+	color: $color-yellow
+
+.text-color-purp
+	color: $color-purple
+
+.text-color-blue
+	color: $color-blue
+
+.container-fluid
+	margin: 0
+	padding: 0
+
+.row
+	margin-right: 0px
+
+.no-padding
+	padding: 0
+
+.add-padding
+	padding-bottom: 30px
+
+::-webkit-scrollbar
+	width: 15px
+
+::-webkit-scrollbar-thumb
+	background-color: $color-purple
+	
+	border-radius: 10px
+
+::-webkit-scrollbar-track
+	background-color: $color-black
+
+
+
+//header
+
+header
+	background-color: $color-black
+	padding-top: 1%
+	padding-bottom: 1%
+
+	position: fixed
+	z-index: 100
+
+	width: 100%
+	
+	li
+		@extend %nav-styling
+		padding-right: 10%
+	a
+		@extend %a-reset
+		color: $color-white
+		font-size: 24px
+		font-family: $family-font
+	a:hover
+		@extend %a-reset
+		color: $color-purple
+	a:focus
+		color: $color-purple
+	a:active
+		@extend %a-reset
+		color: purple
+	.logo
+		background-image: url('../img/Logo.svg')
+		background-repeat: no-repeat
+		background-position: 50% 10%
+		background-size: 50%
+
+//main
+
+.header-about-us
+	background-color: $color-black
+
+.main-text
+	color: $color-white
+	font-family: $family-font
+	font-size: 30px
+
+	padding-top: 10%
+
+.about-us-h2
+	color: $color-white
+	font-family: $family-font
+	font-size: 35px
+	text-align: center
+
+	padding-top: 3%
+
+.about-us
+	background-color: $color-black
+
+.about-block-1
+	margin-right: 20%
+	margin-top: 5%
+
+
+	.img-block
+		width: 10%
+		height: 10%
+
+
+	.block-inside
+		opacity: 1
+
+		background-color: $color-white
+		color: $color-black
+		font-family: $family-font
+
+		width: 40%
+		padding: 40px 0
+
+		border-top-right-radius: 80px
+		border-bottom-right-radius: 80px
+
+		
+		background-image: url("../img/about-icon-1.svg")
+		background-position: 10% 50%
+		background-repeat: no-repeat
+		background-size: 150px
+		
+		transition: 1.5s ease-in
+	
+	h2
+		width: 50%
+		font-size: 30px
+		padding-left: 40%
+		transition: 2s ease-in
+	
+
+	.hidden-text-block
+		opacity: 0
+		visibility: hidden
+		// float: left
+		right: 20%
+		margin-top: 0%
+		width: 30%
+		position: absolute
+		margin-right: 25%
+
+		font-family: $family-font
+		color: $color-black
+
+		transition: 1s ease-in 2s
+
+	.arrow
+
+
+		button
+
+			@include button-reset
+
+			background-image: url("../img/arrowMain.svg")
+			background-repeat: no-repeat
+			background-size: 100px
+			background-position: 50% 50%
+			
+			color: transparent
+			float: right
+
+			padding: 35px
+			margin-right: 2%
+
+		button:hover
+
+			background-size: 105px
+
+		button:focus
+			
+			background-size: 105px
+
+.about-block-2
+	margin-top: 5%
+	margin-left: 20%
+
+	.block-inside-2
+		background-color: $color-purple
+		color: $color-white
+		font-family: $family-font
+		float: right
+
+		width: 40%
+		padding: 35px 0
+
+		border-top-left-radius: 80px
+		border-bottom-left-radius: 80px
+
+		
+		background-image: url("../img/about-icon-2.svg")
+		background-position: 90% 50%
+		background-repeat: no-repeat
+		background-size: 150px
+
+		transition: 1.5s ease-in
+
+	h2
+		width: 50%
+		font-size: 30px
+		padding-left: 30%
+		padding-top: 25px
+		transition: 2s ease-in
+
+	.hidden-text-block
+		opacity: 0
+		visibility: hidden
+		// float: left
+		margin-left: 35%
+		margin-top: 0%
+		width: 25%
+		position: absolute
+
+		font-family: $family-font
+		color: $color-white
+
+		transition: 1s ease-in 2s
+
+	.arrow
+
+
+		button
+
+			@include button-reset
+
+			background-image: url("../img/arrowMainRight.svg")
+			background-repeat: no-repeat
+			background-size: 100px
+			background-position: 50% 50%
+			
+			color: transparent
+			float: left
+
+			padding: 35px
+			margin-left: 2%
+
+		button:hover
+
+			background-size: 105px
+
+		button:focus
+			
+			background-size: 105px
+
+.about-block-3
+	margin-right: 20%
+	margin-top: 5%
+	margin-bottom: 7%
+
+	.block-inside-3
+		opacity: 1
+
+		background-color: $color-yellow
+		color: $color-black
+		font-family: $family-font
+
+		width: 40%
+		padding: 50px 0
+
+		border-top-right-radius: 80px
+		border-bottom-right-radius: 80px
+
+		
+		background-image: url("../img/about-icon-3.svg")
+		background-position: 10% 50%
+		background-repeat: no-repeat
+		background-size: 130px
+		
+		transition: 1.5s ease-in
+	
+	h2
+		width: 70%
+		font-size: 30px
+		padding-left: 40%
+		transition: 2s ease-in
+	
+
+	.hidden-text-block
+		opacity: 0
+		visibility: hidden
+		// float: left
+		position: absolute
+		right: 45%
+		margin-left: 35%
+		margin-top: 0%
+		width: 30%
+
+		font-family: $family-font
+		color: $color-black
+
+		transition: 1s ease-in 2s
+
+	.arrow
+
+
+		button
+
+			@include button-reset
+
+			background-image: url("../img/arrowMain.svg")
+			background-repeat: no-repeat
+			background-size: 100px
+			// background-position: 50% 50%
+			
+			color: transparent
+			float: right
+
+			padding: 35px
+			margin-right: 2%
+			
+		button:hover
+
+			background-size: 105px
+
+		button:focus
+			
+			background-size: 105px
+
+.our-wins
+	background-color: $color-purple
+
+.shtorm-animation
+	padding-top: 15%
+	padding-bottom: 15%
+	background: url("../img/strom.svg") 50% 50% no-repeat, url("../img/strom.svg") 50% 50% no-repeat, url("../img/strom.svg") 50% 50% no-repeat
+	background-size: 15%, 10%, 10%
+	transition: 2s ease-out
+
+.our-wins-1, .our-wins-2, .our-wins-3
+	margin-top: 3%
+
+.text-wins
+	font-size: 50px
+	text-align: center
+	font-family: $family-font
+
+.on-wins
+	padding: 40px
+	background-image: url("../img/round.svg")
+	background-size: 100%
+	background-repeat: no-repeat
+	background-position: 50% 50%
+
+.our-wins-text
+	font-size: 30px
+	font-family: $family-font
+	text-align: center
+
+	margin: auto
+	margin-top: 5%
+
+.wins-text-white
+	color: $color-white
+
+.wins-text-black
+	color: $color-black
+
+.our-wins-3
+	margin-bottom: 5%
+
+.portfolio
+	background-color: $color-yellow
+	padding-top: 5%
+	padding-bottom: 5%
+
+	h1
+		font-size: 40px
+		font-family: $family-font
+		color: $color-black
+		text-align: center
+
+.price-list
+	background-color: $color-white
+
+	padding-top: 5%
+
+.price-list h3
+	font-size: 40px
+	font-family: $family-font
+	color: $color-black
+
+.price-list-text
+	font-size: 40px
+	font-family: $family-font
+	text-align: center
+
+.price-block
+	background-position: 50% 0%
+	background-repeat: no-repeat
+	background-size: 30%
+	padding-top: 35%
+	margin-top: 5%
+
+	text-align: center
+
+.price-list-block-1
+	background-image: url("../img/landing-page.svg")
+
+.price-list-block-2
+	background-image: url("../img/corporative.svg")
+
+.price-list-block-3
+	background-image: url("../img/internet-magazine.svg")
+
+.price-block p
+	font-size: 30px
+	font-family: $family-font
+	color: $color-black
+
+.price-list-remark
+	font-size: 25px
+	font-family: $family-font
+	color: $color-black
+
+	margin-top: 2%
+
+.form
+	background-color: $color-blue
+
+	padding-top: 2%
+	padding-bottom: 2%
+
+.form h2 
+	font-size: 40px
+	font-family: $family-font
+	color: $color-white
+	text-align: center
+
+	margin-bottom: 2%
+
+.form-block
+	border: 3px solid white
+	box-sizing: padding-box
+	padding: 3% 0
+
+	position: relative
+
+.form-input
+	margin-top: 10%
+
+
+.form-input input
+	padding: 4px
+	padding-right: 80px
+	padding-left: 5px
+	border-radius: 5px
+	border: 1px solid transparent
+	margin-left: 60px
+	margin-top: 8px
+
+.form-input input::placeholder
+	font-family: $family-font
+
+	text-indent: 0px
+	transition: text-indent 0.6s ease
+
+.form-input input:hover
+	border: 1px solid black
+
+.form-input input:focus
+	border: 1px solid black
+
+.form-input input:active
+	border: 1px solid black
+
+.form-input input:focus::placeholder
+	text-indent: 500px
+	transition: text-indent 0.6s ease
+
+
+.form-input:first-child:before
+	content: ""
+	position: absolute
+	background-image: url("../img/mail-icon.svg")
+	background-repeat: no-repeat
+	background-size: 100%
+	background-position: 50% 50%
+
+	// top: 21%
+	width: 50px
+	height: 50px
+
+.form-input:last-of-type:before
+	content: ""
+	position: absolute
+	background-image: url("../img/phone-icon.svg")
+	background-repeat: no-repeat
+	background-size: 100%
+	background-position: 50% 50%
+
+	// top: 21%
+	width: 50px
+	height: 50px
+
+.submit-main-form
+	margin-top: 10%
+	margin-left: 20%
+	padding: 10px 80px
+
+	background-color: $color-white
+	border: none
+	border-radius: 5px
+
+	font-size: 18px
+	color: $color-black
+	font-family: $family-font
+
+.submit-main-form:hover
+	background-color: $color-black
+	color: $color-white
+
+.submit-main-form:focus
+	background-color: $color-black
+	color: $color-white
+
+.submit-main-form:active
+	background-color: $color-black
+	color: $color-black
+
+.question
+	margin-top: 5%
+
+.return-text-large
+	font-size: 30px
+	color: $color-white
+	font-family: $family-font
+	text-align: center
+
+.return-call li
+	text-align: center
+
+	font-family: $family-font
+	font-size: 45px
+	list-style: none
+
+.return-call a
+	color: $color-white
+	text-decoration: none
+	
+	background-image: linear-gradient(currentColor, currentColor)
+	background-position: 0% 100%
+	background-repeat: no-repeat
+	background-size: 0% 2px
+	transition: background-size .3s
+
+.return-call a:hover 
+	background-size: 100% 2px
+
+.return-text-small
+	font-size: 25px
+	color: $color-white
+	font-family: $family-font
+	text-align: center
+
+footer
+	background-color: #0D0D0D
+	padding-top: 1%
+	padding-bottom: 1%
+
+.footer-nav
+	list-style: none
+	padding-left: 5%
+	padding-top: 2%
+	margin-left: 5%
+
+	.button
+		font-size: 30px
+		color: $color-white
+		font-family: $family-font
+
+		text-decoration: none
+	
+		background-image: linear-gradient(currentColor, currentColor)
+		background-position: 0% 100%
+		background-repeat: no-repeat
+		background-size: 0% 2px
+		transition: background-size .3s
+	
+	.button:hover
+		background-size: 100% 2px
+
+.social
+	list-style: none
+	margin-right: 5%
+
+	li 
+		display: inline
+		padding-right: 25px
+
+.social-button
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	background-size: 100%
+
+	font-size: 0px
+	padding: 20px
+
+.social-bg
+	background-image: url("../img/Logo.svg")
+	background-position: 90% 50%
+	background-repeat: no-repeat
+	background-size: 60%
+
+.social-button:hover
+	opacity: 0.9
+
+.social-button:focus
+	opacity: 0.9
+
+.social-button:active
+	opacity: 0.7
+
+.vk
+	background-image: url("../img/vk-socila.svg")
+
+.fb
+	background-image: url("../img/fb-socila.svg")
+
+.tg
+	background-image: url("../img/tg-social.svg")
+
+.inst
+	background-image: url("../img/inst-social.svg")
+
+main
+	position: relative
+	z-index: 1
+
+footer 
+	position: sticky
+	bottom: 0
+ 	left: 0
+
+.copyright
+	font-size: 20px
+	color: $color-white
+	font-family: $family-font
+	text-align: center
+
+svg
+	position: absolute
+	width: 100%
+	height: 70%
+
+// // Extra small devices (portrait phones, less than 576px)
+// @media screen (max-width: 575.98px)
+
+
+// // Small devices (landscape phones, 576px and up)
+// @media screen (min-width: 576px) and (max-width: 767.98px)
+
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) and (max-width: 991.98px)
+
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199.98px)
+// 	.button
+// 		font-size: 20px
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px)
+
+	
